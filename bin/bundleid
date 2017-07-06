@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'bundleid_helper'
+
+helper = BundleidHelper::Helper.new  
+helper.get_bundleid
