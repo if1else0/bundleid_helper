@@ -24,7 +24,7 @@ module BundleidHelper
       end
 
       ###unzip plist file from ipa
-      command = "unzip -j #{ipa_name} \"Payload/*.app/Info.plist\" -d xxxxxtemp"
+      command = "unzip -jo #{ipa_name} \"Payload/*.app/Info.plist\" -d xxxxxtemp"
       `#{command}`
       plist = CFPropertyList::List.new(:file => "xxxxxtemp/Info.plist")
       data = CFPropertyList.native_types(plist.value)
